@@ -1,0 +1,47 @@
+# curl -X 'POST'
+#  'http://localhost:8080/api/v1/radicals'
+#  -H 'accept: */*'
+#  -H 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjoiUk9MRV9BRE1JTiIsImV4cCI6MTc0NzYyMTQ4MTUyMiwiaWF0IjoxNzQ3NTg1NDgxNTIyfQ.waFfxT0AFu9Qrvc_G5bHCUuEpvcc9SEY87exnXK2ERKrVgSOUqu-DiZF0NTdpOJRikvu9WR4535_Dv_RtrZ9xA'
+#  -H 'Content-Type: application/json'
+#  -d '{
+#  "name": "Еда",
+#  "number": 184,
+#  "strokeCount": 9,
+#  "forms": [
+#    {
+#      "formName": "Еда",
+#      "spelling": "食",
+#    },
+#    {
+#      "formName": "Еда слева",
+#      "spelling": "飠",
+#      "altSpelling": "⻞"
+#    }
+#  ]
+#}'
+POST http://localhost:8080/api/v1/radicals
+accept: */*
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjoiUk9MRV9BRE1JTiIsImV4cCI6MTc0NzYyMTQ4MTUyMiwiaWF0IjoxNzQ3NTg1NDgxNTIyfQ.waFfxT0AFu9Qrvc_G5bHCUuEpvcc9SEY87exnXK2ERKrVgSOUqu-DiZF0NTdpOJRikvu9WR4535_Dv_RtrZ9xA
+Content-Type: application/json
+
+{
+  "name": "Еда",
+  "number": 184,
+  "strokeCount": 9,
+  "forms": [
+    {
+      "formName": "Еда",
+      "spelling": "食"
+    },
+    {
+      "formName": "Еда слева",
+      "spelling": "飠",
+      "altSpelling": "⻞"
+    }
+  ]
+}
+
+###
+
+
+
