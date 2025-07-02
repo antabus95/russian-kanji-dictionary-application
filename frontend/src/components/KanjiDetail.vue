@@ -70,13 +70,18 @@ const orderedReadings = ref([])
 const baseMeanings = ref([])
 
 const loadKanji = async () => {
-  const response = await axios.get(`/api/v1/kanji/${props.kanjiId}`)
-  kanji.value = response.data
-  orderedReadings.value = [...kanji.value.readings].sort((a, b) => {
-    const order = { ON: 1, KUN: 2, NANORI: 3 }
-    return (order[a.readingType] || 4) - (order[b.readingType] || 4)
-  })
-  baseMeanings.value = [...kanji.value.baseMeanings]
+  try {
+    const response = await axios.get(`/api/v1/kanji/${props.kanjiId}`)
+    kanji.value = response.data
+    orderedReadings.value = [...kanji.value.readings].sort((a, b) => {
+      const order = { ON: 1, KUN: 2, NANORI: 3 }
+      return (order[a.readingType] || 4) - (order[b.readingType] || 4)
+    })
+    baseMeanings.value = [...kanji.value.baseMeanings]
+  } catch(error) {
+    console.error('Не удалось загрузить иероглиф', error)
+  }
+  
 }
 
 const goToKanji = (id) => {

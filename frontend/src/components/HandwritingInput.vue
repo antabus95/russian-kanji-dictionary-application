@@ -180,7 +180,8 @@ const requestCandidates = async () => {
 }
 
 const selectCandidate = (kanji) => {
-  if (typeof kanji !== 'string') return
+  if (typeof kanji !== 'string') 
+    return
   updateValue(inputValue.value + kanji)
   showCanvas.value = false
 }

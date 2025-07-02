@@ -174,8 +174,13 @@ const chineseReadingCategoryOptions = [
 ]
 
 const loadRadicals = async () => {
-  const { data } = await axios.get('/api/v1/radicals/forms')
-  radicalForms.value = data
+  try {
+    const { data } = await axios.get('/api/v1/radicals/forms')
+    radicalForms.value = data
+  } catch (error) {
+    console.error('Не удалось загрузить ключ', error)
+  }
+  
 }
 
 const openRadicalPicker = async () => {
